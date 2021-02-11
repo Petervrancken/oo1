@@ -2,9 +2,9 @@
 error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 
-require __DIR__.'/functions.php';
-
-$ships = get_ships();
+require __DIR__ . '/bootstrap.php';
+$shipLoader = new ShipLoader();
+$ships = $shipLoader->getShips();
 
 $errorMessage = '';
 if (isset($_GET['error'])) {

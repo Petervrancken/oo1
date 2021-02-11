@@ -1,7 +1,10 @@
 <?php
 require_once __DIR__.'/lib/Ship.php';
+require_once __DIR__.'/lib/BattleManager.php';
+require_once __DIR__.'/lib/ShipLoader.php';
+require_once __DIR__.'/lib/BattleResult.php';
 
-function get_ships()
+/*function get_ships()
 {
     $ships = array();
 
@@ -33,7 +36,7 @@ function get_ships()
     $ship4->setStrength(500);
     $ships['a_wing_interceptor'] = $ship4;
 
-    return $ships;
+    return $ships;*/
 
     /*return array(
         'starfighter' => array(
@@ -60,15 +63,15 @@ function get_ships()
             'jedi_factor' => 4,
             'strength' => 50,
         ),
-    );*/
-}
+    );
+}*/
 
 /**
  * Our complex fighting algorithm!
  *
  * @return array With keys winning_ship, losing_ship & used_jedi_powers
  */
-function battle(Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
+/*function battle(Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
 {
     $ship1Health = $ship1->getStrength() * $ship1Quantity;
     $ship2Health = $ship2->getStrength() * $ship2Quantity;
@@ -115,11 +118,5 @@ function battle(Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
         'losing_ship' => $losingShip,
         'used_jedi_powers' => $usedJediPowers,
     );
-}
+}*/
 
-function didJediDestroyShipUsingTheForce(Ship $ship)
-{
-    $jediHeroProbability = $ship->getJediFactor() / 100;
-
-    return mt_rand(1, 100) <= ($jediHeroProbability*100);
-}
