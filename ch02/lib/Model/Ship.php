@@ -4,6 +4,7 @@ ini_set( 'display_errors', 1 );
 
 class Ship
 {
+    private $id;
     private $name;
     private $weaponPower = 0;
     private $jediFactor = 0;
@@ -20,8 +21,6 @@ class Ship
     {
         return !$this->underRepair;
     }
-
-
 
     public function sayHello()
     {
@@ -110,6 +109,24 @@ class Ship
     {
         $this->name = $name;
     }
+
+    /**
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param integer $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+
 
 
 }
