@@ -1,7 +1,17 @@
 <?php
-require_once __DIR__.'/lib/Ship.php';
+require_once __DIR__ . '/lib/Model/Ship.php';
+require_once __DIR__ . '/lib/Service/BattleManager.php';
+require_once __DIR__ . '/lib/Service/ShipLoader.php';
+require_once __DIR__ . '/lib/Model/BattleResult.php';
+require_once __DIR__ . '/lib/Service/Container.php';
 
-function get_ships()
+$configuration = array(
+    'db_dsn' => 'mysql:host=localhost;dbname=oo_battle',
+    'db_user' => 'root',
+    'db_pass' => 'Mywampstack1988',
+);
+
+/*function get_ships()
 {
     $ships = array();
 
@@ -33,7 +43,7 @@ function get_ships()
     $ship4->setStrength(500);
     $ships['a_wing_interceptor'] = $ship4;
 
-    return $ships;
+    return $ships;*/
 
     /*return array(
         'starfighter' => array(
@@ -60,15 +70,15 @@ function get_ships()
             'jedi_factor' => 4,
             'strength' => 50,
         ),
-    );*/
-}
+    );
+}*/
 
 /**
  * Our complex fighting algorithm!
  *
  * @return array With keys winning_ship, losing_ship & used_jedi_powers
  */
-function battle(Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
+/*function battle(Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
 {
     $ship1Health = $ship1->getStrength() * $ship1Quantity;
     $ship2Health = $ship2->getStrength() * $ship2Quantity;
@@ -115,11 +125,5 @@ function battle(Ship $ship1, $ship1Quantity, Ship $ship2, $ship2Quantity)
         'losing_ship' => $losingShip,
         'used_jedi_powers' => $usedJediPowers,
     );
-}
+}*/
 
-function didJediDestroyShipUsingTheForce(Ship $ship)
-{
-    $jediHeroProbability = $ship->getJediFactor() / 100;
-
-    return mt_rand(1, 100) <= ($jediHeroProbability*100);
-}
