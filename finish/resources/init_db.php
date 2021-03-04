@@ -5,7 +5,7 @@
  */
 $databaseName = 'oo_battle';
 $databaseUser = 'root';
-$databasePassword = '';
+$databasePassword = 'Mywampstack1988';
 
 /*
  * CREATE THE DATABASE
